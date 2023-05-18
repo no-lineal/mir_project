@@ -68,7 +68,7 @@ latent_dim = 2
 """
 
 sample_space = sorted(os.listdir( midi_path ))
-#sample_space = np.random.choice( sample_space, 1000 )
+sample_space = np.random.choice( sample_space, 1000 )
 
 print(f'sample space size: {len(sample_space)}')
 
