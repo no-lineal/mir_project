@@ -273,6 +273,7 @@ optimizer = Adam( model.parameters(), lr=lr )
 epochs = 100
 best_loss = float('inf')
 
+loss_dict = {}
 for epoch in range( epochs ):
 
     overall_loss = 0
@@ -296,6 +297,8 @@ for epoch in range( epochs ):
 
     average_loss = overall_loss / (batch_size * i)
     print(f'epoch: { epoch }, loss: { average_loss }')
+
+    loss_dict[ epoch ] = average_loss
 
     if average_loss < best_loss:
         best_loss = average_loss
