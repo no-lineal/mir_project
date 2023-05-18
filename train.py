@@ -1,6 +1,5 @@
 import numpy as np
 
-from music21 import converter
 import pretty_midi
 import librosa
 import scipy.io.wavfile as wavfile
