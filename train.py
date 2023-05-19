@@ -19,6 +19,8 @@ import os
 # viz
 import matplotlib.pyplot as plt
 
+import json
+
 torch.autograd.set_detect_anomaly(True)
 
 """
@@ -303,3 +305,9 @@ for epoch in range( epochs ):
     if average_loss < best_loss:
         best_loss = average_loss
         torch.save( model.state_dict(), model_path + 'vae.pth' )
+
+loss_dict_file = model_path + 'loss_dict.json'
+
+with open( loss_dict_file, 'w' ) as fp:
+
+    json.dump( loss_dict, fp )
